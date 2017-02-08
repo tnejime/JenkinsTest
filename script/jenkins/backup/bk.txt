@@ -1,0 +1,46 @@
+
+def outputMessage (String ansiescape, String message){
+  ansiColor ('xterm') {
+   println ansiescape + message + '\033[0m'
+  }
+}
+
+def outputException (Exception e){
+  outputMessage('\033[31m', 'ERROR: ' + e.message + '\n' + e.class)
+}
+
+def functionTest () {
+  println "Test Call Function is Succeed"
+}
+
+//def ansicolor
+def logwrapper(Closure closure){
+    try{
+        closure()
+    }catch (Exception e){
+        outputException (e)
+    }
+}
+
+def hoge
+
+logwrapper{
+    node {
+    stage ('git checkout'){
+        stage('git fetch'){
+            try{
+            git url: 'https://github.com/tnejime/JenkinsTest.git' , branch: 'ansicolor'
+            //hoge = load('/script/jenkins/lib/ansicolor.groovy')
+            }catch(Exception e){
+                println('gitloaderror')
+            }
+        }
+    }
+    stage ('execute'){
+        hoge.outputMessage('\033[34m','finished load git')
+        println 'outputtest'
+            println 'HelloWorld'
+            sh('exit 1')
+    }
+    }
+}
