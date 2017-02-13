@@ -10,7 +10,7 @@ def consoleHighlight (String branch = '' , String revision = '' , Closure closur
     }catch (Exception e){
         color = '\033[31m'
         result = "FAILURE"
-        errorMessage = 'ERROR: ' + e.class + '\t' + e.message + '\n'
+        errorMessage = 'ERROR: ' + e.class + '\n' + e.message + '\n'
         throw e
     }finally{
         println( 
