@@ -9,8 +9,8 @@ def outputMessage (String ansiescape, String message){
 def outputException (Exception e){
     ansiColor('xterm'){
     println('\033[31m' + 'ERROR: ' + e + '\033[0m\n'
-        + '\033[31m' + 'NODE_NAME: ' + env.NODE_NAME + "\tJOB_NAME: " + env.JOB_NAME + '\033[0m\n'
-        + '\033[32m' + 'NODE_LABELS: ' + env.NODE_LABELS + '\033[0m\n'
+        + '\033[31m' + 'NODE_NAME: ' + env.NODE_NAME + '\tNODE_LABELS: ' + env.NODE_LABELS + '\033[0m\n'
+        + '\033[32m' +  "JOB_NAME: " + env.JOB_NAME + '\033[0m\n'
         + 'JOB_BASE_NAME' + env.JOB_BASE_NAME + '\033[0m\n'
         + 'BUILD_TAG' + env.BUILD_TAG + '\033[0m\n'
         + 'currentBuild: ' + currentBuild + '\033[0m\n'
@@ -24,11 +24,8 @@ def outputException (Exception e){
         //+ ': ' + env. + '\033[0m\n'
     
         )
-        //println  '\033[32m' + (new Throwable()).getStackTrace().getClassName()
-        
-        //println  '\033[32m' + e.stacktrace
-        //println  '\033[32m' + e.printStackTrace()
-       //  println  '\033[32m' +org.codehaus.groovy.runtime.StackTraceUtils.sanitize(new Exception(e)).printStackTrace()
+        //stacktrace 出力ただし、標準で出力されるstacktraceとは異なる
+        println '\033[33m' + Thread.currentThread().getStackTrace();
     }
 }
 
