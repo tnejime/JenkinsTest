@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
 
 node{
-  sh "test.sh"
+  sh "./test.sh"
 }
