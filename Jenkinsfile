@@ -1,9 +1,8 @@
-
-def ansicolor
-def jenkinstest
-
+#!/usr/bin/env groovy
 node {
-    ansicolor = load("scripts/jenkins/lib/ansicolor.groovy")
-	ansicolor.outputMessage('\033[31m' , "hogehoge")
-
+  stage("test"){
+    echo "hogehoge"
+    echo "${env.BRANCH_NAME}"
+    sh "./echo.sh"
+  }
 }
