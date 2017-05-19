@@ -35,7 +35,7 @@ def searchBuildTargets(def files_changed = []){
   // def build_attribute_map = new SplitHashMap()
   for (jobconfig in build_config) {
     def jobname = jobconfig["job"]
-    for (attribute in "include","exclude") {
+    for (attribute in ["include","exclude"]) {
       for (path in jobconfig[attribute]) {
         //Todo build_attribute_map.putの名前直す
         def path_attributes = build_attribute_map.put(path)
