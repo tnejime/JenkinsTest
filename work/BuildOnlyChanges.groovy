@@ -2,12 +2,12 @@
 
 config_filename = "work/build_config.json"
 
-def splitmap_script
-def splitmap_filename = "work/SplitHashMap.groovy"
+splitmap_filename = "work/SplitHashMap.groovy"
+splitmap_script = null
 
 //変更範囲だけJenkinsにビルドさせるScripts
-node{
-  stage('git checkout'){
+node {
+  stage('git checkout') {
     //TODO:消す(Sample用GitClone)
     git url: 'https://github.com/tnejime/JenkinsTest.git'
     sh "git fetch"
@@ -17,7 +17,7 @@ node{
     splitmap_script = load(splitmap_filename)
   }
 
-  stage('build on push to pull request'){
+  stage('build on push to pull request') {
     //Gitの変更点抽出してArrayListに格納
     def files_changed = sh(script: "git diff --stat --name-only `git show-branch --merge-base master HEAD` HEAD", returnStdout: true).split(/\n/) as ArrayList
     def buildTargets = searchBuildTargets(files_changed)
@@ -27,7 +27,7 @@ node{
   }
 }
 
-def searchBuildTargets(def files_changed = []){
+def searchBuildTargets(def files_changed = []) {
   //パスを階層ごとに分割してmap keyとしてAttributeを格納する
   def build_config = new groovy.json.JsonSlurperClassic().parseText(readFile(config_filename))
   def build_attribute_map = splitmap_script.createSplitHashMap("/")
@@ -49,17 +49,17 @@ def searchBuildTargets(def files_changed = []){
 
   //Git変更点からビルド対象となるJobを探す
   def buildTargets = []
-  for (changed_filepath in files_changed){
+  for (changed_filepath in files_changed) {
     def path_attributes = build_attribute_map.getMatchedParameter(changed_filepath)
     def buildtarget_cache = []
     for (attribute in path_attributes){
-      if(attribute.containsKey("include")){
+      if(attribute.containsKey("include")) {
           buildtarget_cache += attribute["include"]
       }
     }
     buildtarget_cache.unique()
-    for (attribute in path_attributes){
-      if(attribute.containsKey("exclude")){
+    for (attribute in path_attributes) {
+      if(attribute.containsKey("exclude")) {
           buildtarget_cache -= attribute["exclude"]
       }
     }
