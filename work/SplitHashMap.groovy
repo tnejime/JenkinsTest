@@ -2,7 +2,7 @@
 
 //特定のdelimiterを基準のpathを分割して格納・参照するHashMap
 //TODO:未完成(必要とした機能しか入っていない)
-class SplitHashMap {
+class SplitHashMap implements Serializable {
   //groovyだとインデクサを変えられないので
   private def _nested_map = [:]
   private def _delimiter = "/"
