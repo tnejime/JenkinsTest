@@ -3,7 +3,7 @@
 config_filename = "work/build_config.json"
 
 splitmap_filename = "work/SplitHashMap.groovy"
-def splitmap_script = null
+splitmap_script = null
 
 //変更範囲だけJenkinsにビルドさせるScripts
 node {
