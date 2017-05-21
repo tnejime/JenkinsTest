@@ -3,7 +3,7 @@
 config_filename = "work/build_config.json"
 
 splitmap_filename = "work/SplitHashMap.groovy"
-splitmap_script = null
+def splitmap_script = null
 
 //変更範囲だけJenkinsにビルドさせるScripts
 node {
@@ -29,7 +29,8 @@ node {
 
 def searchBuildTargets(def files_changed = []) {
   //パスを階層ごとに分割してmap keyとしてAttributeを格納する
-  def build_config = new groovy.json.JsonSlurperClassic().parseText(readFile(config_filename))
+  def config_text = readFile(config_filename)
+  def build_config = new groovy.json.JsonSlurperClassic().parseText(config_text)
   def build_attribute_map = splitmap_script.createSplitHashMap("/")
   // def build_attribute_map = new SplitHashMap()
   for (jobconfig in build_config) {
