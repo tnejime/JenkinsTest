@@ -19,12 +19,11 @@ node{
 
   stage('build on push to pull request'){
     //Gitの変更点抽出してArrayListに格納
-    def files_changed = sh(script: "git files_changed --stat --name-only `git show-branch --merge-base master HEAD` HEAD", returnStdout: true).split(/\n/) as ArrayList
+    def files_changed = sh(script: "git diff --stat --name-only `git show-branch --merge-base master HEAD` HEAD", returnStdout: true).split(/\n/) as ArrayList
     def buildTargets = searchBuildTargets(files_changed)
     println buildTargets
 
     def parallel_builds = []
-
   }
 }
 
