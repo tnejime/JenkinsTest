@@ -10,8 +10,8 @@ node{
   stage('git checkout'){
     //TODO:消す(Sample用GitClone)
     git url: 'https://github.com/tnejime/JenkinsTest.git'
-    sh "git checkout testdiff"
     sh "git fetch"
+    sh "git checkout testdiff"
     sh "git pull origin testdiff"
 
     splitmap_script = load(splitmap_filename)
