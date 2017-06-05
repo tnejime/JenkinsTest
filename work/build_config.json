@@ -1,0 +1,35 @@
+[
+  {
+    "job": [
+      "client",
+      "game_server",
+      "api_server"
+    ],
+    "include": [
+      "scripts/"
+    ],
+    "exclude": [
+      "scripts/jenkins/"
+    ]
+  },
+  {
+    "job": [
+      "client"
+    ],
+    "include": [
+      "src/",
+      "src/server/"
+    ],
+    "exclude": [
+      "src/server/"
+    ]
+  },
+  {
+    "job": [
+      "api_server"
+    ],
+    "exclude": [
+      "scripts/"
+    ]
+  }
+]

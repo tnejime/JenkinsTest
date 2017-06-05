@@ -1,0 +1,148 @@
+{
+  "_class": "org.jenkinsci.plugins.workflow.job.WorkflowJob",
+  "actions": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "_class": "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+    }
+  ],
+  "description": "githubからのwebhookを受け取り、各jobに流してBuildする",
+  "displayName": "jjjj",
+  "displayNameOrNull": null,
+  "name": "jjjj",
+  "url": "http://localhost:8080/job/jjjj/",
+  "buildable": true,
+  "builds": [
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 173,
+      "url": "http://localhost:8080/job/jjjj/173/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 172,
+      "url": "http://localhost:8080/job/jjjj/172/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 171,
+      "url": "http://localhost:8080/job/jjjj/171/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 170,
+      "url": "http://localhost:8080/job/jjjj/170/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 169,
+      "url": "http://localhost:8080/job/jjjj/169/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 168,
+      "url": "http://localhost:8080/job/jjjj/168/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 167,
+      "url": "http://localhost:8080/job/jjjj/167/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 166,
+      "url": "http://localhost:8080/job/jjjj/166/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 165,
+      "url": "http://localhost:8080/job/jjjj/165/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 164,
+      "url": "http://localhost:8080/job/jjjj/164/"
+    }
+  ],
+  "color": "blue",
+  "firstBuild": {
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "number": 164,
+    "url": "http://localhost:8080/job/jjjj/164/"
+  },
+  "healthReport": [
+    {
+      "description": "Build stability: No recent builds failed.",
+      "iconClassName": "icon-health-80plus",
+      "iconUrl": "health-80plus.png",
+      "score": 100
+    }
+  ],
+  "inQueue": false,
+  "keepDependencies": false,
+  "lastBuild": {
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "number": 173,
+    "url": "http://localhost:8080/job/jjjj/173/"
+  },
+  "lastCompletedBuild": {
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "number": 173,
+    "url": "http://localhost:8080/job/jjjj/173/"
+  },
+  "lastFailedBuild": {
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "number": 167,
+    "url": "http://localhost:8080/job/jjjj/167/"
+  },
+  "lastStableBuild": {
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "number": 173,
+    "url": "http://localhost:8080/job/jjjj/173/"
+  },
+  "lastSuccessfulBuild": {
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "number": 173,
+    "url": "http://localhost:8080/job/jjjj/173/"
+  },
+  "lastUnstableBuild": null,
+  "lastUnsuccessfulBuild": {
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "number": 167,
+    "url": "http://localhost:8080/job/jjjj/167/"
+  },
+  "nextBuildNumber": 174,
+  "property": [
+    {
+      "_class": "com.sonyericsson.rebuild.RebuildSettings"
+    },
+    {
+      "_class": "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions": [
+        {
+          "_class": "hudson.model.TextParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "event_hook",
+            "value": "{ \n \"review_requested\": [],\n \"member\": [],\n}"
+          },
+          "description": "",
+          "name": "event_hook",
+          "type": "TextParameterDefinition"
+        }
+      ]
+    },
+    {
+      "_class": "jenkins.model.BuildDiscarderProperty"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty"
+    }
+  ],
+  "queueItem": null,
+  "concurrentBuild": true
+}

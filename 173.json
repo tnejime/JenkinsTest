@@ -1,0 +1,66 @@
+{
+  "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+  "actions": [
+    {},
+    {
+      "_class": "hudson.model.CauseAction",
+      "causes": [
+        {
+          "_class": "hudson.model.Cause$UserIdCause",
+          "shortDescription": "Started by user njm",
+          "userId": "njm",
+          "userName": "njm"
+        },
+        {
+          "_class": "org.jenkinsci.plugins.workflow.cps.replay.ReplayCause",
+          "shortDescription": "Replayed #172"
+        }
+      ]
+    },
+    {
+      "_class": "hudson.model.ParametersAction",
+      "parameters": [
+        {
+          "_class": "hudson.model.TextParameterValue",
+          "name": "event_hook",
+          "value": "{ \n \"review_requested\": [\"notifi\",\"not1\",\"not2\"],\n \"member\": [],\n}"
+        }
+      ]
+    },
+    {},
+    {
+      "_class": "org.jenkinsci.plugins.workflow.cps.EnvActionImpl"
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.views.FlowGraphAction"
+    },
+    {},
+    {}
+  ],
+  "artifacts": [],
+  "building": false,
+  "description": null,
+  "displayName": "#173",
+  "duration": 11927,
+  "estimatedDuration": 10473,
+  "executor": null,
+  "fullDisplayName": "jjjj #173",
+  "id": "173",
+  "keepLog": false,
+  "number": 173,
+  "queueId": 37,
+  "result": "SUCCESS",
+  "timestamp": 1492393269680,
+  "url": "http://localhost:8080/job/jjjj/173/",
+  "changeSets": [],
+  "nextBuild": null,
+  "previousBuild": {
+    "number": 172,
+    "url": "http://localhost:8080/job/jjjj/172/"
+  }
+}
