@@ -1,10 +1,10 @@
 #!/usr/bin/env groovy
-node('master') {
+node('linux || mac'){
   stage("test"){
     println "test master"
   }
 }
-node('linux || mac'){
+node('master') {
   stage("test"){
     println "test master"
   }
