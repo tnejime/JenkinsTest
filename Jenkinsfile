@@ -1,8 +1,6 @@
 #!/usr/bin/env groovy
-node {
+node('master') {
   stage("test"){
-    echo "hogehoge"
-    echo "${env.BRANCH_NAME}"
-    sh "./echo.sh"
+    println "test master"
   }
 }
