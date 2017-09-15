@@ -1,4 +1,4 @@
-#!/usr/bin/env groovy
+package hogehoge
 
 def Shuturyoku(){
   echo "hogehoge"
